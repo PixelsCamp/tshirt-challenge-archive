@@ -18,13 +18,13 @@ var colors = ['#1abc9c', '#2ecc71', '#3498db', '#e74c3c', '#9b59b6'];
 var Ball = {
     new: function (incrementedSpeed) {
         return {
-            width: 18,
-            height: 18,
+            w: 18,
+            h: 18,
             x: (W / 2) - 9,
             y: (H / 2) - 9,
             moveX: DIRECTION.IDLE,
             moveY: DIRECTION.IDLE,
-            speed: incrementedSpeed || 9
+            s: incrementedSpeed || 9
         };
     }
 };
@@ -33,13 +33,13 @@ var Ball = {
 var Paddle = {
     new: function (side) {
         return {
-            width: 18,
-            height: 70,
+            w: 18,
+            h: 70,
             x: side === 'left' ? 150 : W - 150,
             y: (H / 2) - 35,
             score: 0,
             move: DIRECTION.IDLE,
-            speed: 10
+            s: 10
         };
     }
 };
@@ -60,7 +60,7 @@ var Game = {
         t.r = Paddle.new.call(t, 'right');
         t.b = Ball.new.call(t);
 
-        t.r.speed = 8;
+        t.r.s = 8;
         t.running = t.over = false;
         t.turn = t.r;
         t.timer = t.u = 0;
@@ -128,71 +128,74 @@ var Game = {
     // Update all objects (move the player, paddle, ball, increment the score, etc.)
     update: function () {
         t = this;
+        b = t.b;
+        l = t.l;
+        r = t.r;
         if (!t.over) {
 
             // If the ball collides with the bound limits - correct the x and y coords.
-            if (t.b.x <= 0) Pong._resetTurn.call(t, t.r, t.l);
-            if (t.b.x >= W - t.b.width) Pong._resetTurn.call(t, t.l, t.r);
-            if (t.b.y <= 0) t.b.moveY = DIRECTION.DOWN;
-            if (t.b.y >= H - t.b.height) t.b.moveY = DIRECTION.UP;
+            if (b.x <= 0) Pong._resetTurn.call(t, r, l);
+            if (b.x >= W - b.w) Pong._resetTurn.call(t, l, r);
+            if (b.y <= 0) b.moveY = DIRECTION.DOWN;
+            if (b.y >= H - b.h) b.moveY = DIRECTION.UP;
 
             // Move player if they player.move value was updated by a keyboard event
-            if (t.l.move === DIRECTION.UP) t.l.y -= t.l.speed;
-            else if (t.l.move === DIRECTION.DOWN) t.l.y += t.l.speed;
+            if (l.move === DIRECTION.UP) l.y -= l.s;
+            else if (l.move === DIRECTION.DOWN) l.y += l.s;
 
             // On new serve (start of each turn) move the ball to the correct side
             // and randomize the direction to add some challenge.
             if (Pong._turnDelayIsOver.call(t) && t.turn) {
-                t.b.moveX = t.turn === t.l ? DIRECTION.LEFT : DIRECTION.RIGHT;
-                t.b.moveY = [DIRECTION.UP, DIRECTION.DOWN][Math.round(Math.random())];
-                t.b.y = Math.floor(Math.random() * H - 200) + 200;
+                b.moveX = t.turn === l ? DIRECTION.LEFT : DIRECTION.RIGHT;
+                b.moveY = [DIRECTION.UP, DIRECTION.DOWN][Math.round(Math.random())];
+                b.y = Math.floor(Math.random() * H - 200) + 200;
                 t.turn = null;
             }
 
             // If the player collides with the bound limits, update the x and y coords.
-            if (t.l.y <= 0) t.l.y = 0;
-            else if (t.l.y >= (H - t.l.height)) t.l.y = (H - t.l.height);
+            if (l.y <= 0) l.y = 0;
+            else if (l.y >= (H - l.h)) l.y = (H - l.h);
 
             // Move ball in intended direction based on moveY and moveX values
-            if (t.b.moveY === DIRECTION.UP) t.b.y -= (t.b.speed / 1.5);
-            else if (t.b.moveY === DIRECTION.DOWN) t.b.y += (t.b.speed / 1.5);
-            if (t.b.moveX === DIRECTION.LEFT) t.b.x -= t.b.speed;
-            else if (t.b.moveX === DIRECTION.RIGHT) t.b.x += t.b.speed;
+            if (b.moveY === DIRECTION.UP) b.y -= (b.s / 1.5);
+            else if (b.moveY === DIRECTION.DOWN) b.y += (b.s / 1.5);
+            if (b.moveX === DIRECTION.LEFT) b.x -= b.s;
+            else if (b.moveX === DIRECTION.RIGHT) b.x += b.s;
 
             // Handle paddle (AI) UP and DOWN movement
-            if (t.r.y > t.b.y - (t.r.height / 2)) {
-                if (t.b.moveX === DIRECTION.RIGHT) t.r.y -= t.r.speed / 1.5;
-                else t.r.y -= t.r.speed / 4;
+            if (r.y > b.y - (r.h / 2)) {
+                if (b.moveX === DIRECTION.RIGHT) r.y -= r.s / 1.5;
+                else r.y -= r.s / 4;
             }
-            if (t.r.y < t.b.y - (t.r.height / 2)) {
-                if (t.b.moveX === DIRECTION.RIGHT) t.r.y += t.r.speed / 1.5;
-                else t.r.y += t.r.speed / 4;
+            if (r.y < b.y - (r.h / 2)) {
+                if (b.moveX === DIRECTION.RIGHT) r.y += r.s / 1.5;
+                else r.y += r.s / 4;
             }
 
             // Handle paddle (AI) wall collision
-            if (t.r.y >= H - t.r.height) t.r.y = H - t.r.height;
-            else if (t.r.y <= 0) t.r.y = 0;
+            if (r.y >= H - r.h) r.y = H - r.h;
+            else if (r.y <= 0) r.y = 0;
 
             // Handle Player-Ball collisions
-            if (t.b.x - t.b.width <= t.l.x && t.b.x >= t.l.x - t.l.width) {
-                if (t.b.y <= t.l.y + t.l.height && t.b.y + t.b.height >= t.l.y) {
-                    t.b.x = (t.l.x + t.b.width);
-                    t.b.moveX = DIRECTION.RIGHT;
+            if (b.x - b.w <= l.x && b.x >= l.x - l.w) {
+                if (b.y <= l.y + l.h && b.y + b.h >= l.y) {
+                    b.x = (l.x + b.w);
+                    b.moveX = DIRECTION.RIGHT;
                 }
             }
 
             // Handle paddle-ball collision
-            if (t.b.x - t.b.width <= t.r.x && t.b.x >= t.r.x - t.r.width) {
-                if (t.b.y <= t.r.y + t.r.height && t.b.y + t.b.height >= t.r.y) {
-                    t.b.x = (t.r.x - t.b.width);
-                    t.b.moveX = DIRECTION.LEFT;
+            if (b.x - b.w <= r.x && b.x >= r.x - r.w) {
+                if (b.y <= r.y + r.h && b.y + b.h >= r.y) {
+                    b.x = (r.x - b.w);
+                    b.moveX = DIRECTION.LEFT;
                 }
             }
         }
 
         // Handle the end of round transition
         // Check to see if the player won the round.
-        if (t.l.score === rounds[t.u]) {
+        if (l.score === rounds[t.u]) {
             // Check to see if there are any more rounds/levels left and display the victory screen if
             // there are not.
             if (!rounds[t.u + 1]) {
@@ -201,15 +204,15 @@ var Game = {
             } else {
                 // If there is another round, reset all the values and increment the round number.
                 t.color = t._generateRoundColor();
-                t.l.score = t.r.score = 0;
-                t.l.speed += 0.5;
-                t.r.speed += 1;
-                t.b.speed += 1;
+                l.score = r.score = 0;
+                l.s += 0.5;
+                r.s += 1;
+                b.s += 1;
                 t.u += 1;
             }
         }
         // Check to see if the paddle/AI has won the round.
-        else if (t.r.score === rounds[t.u]) {
+        else if (r.score === rounds[t.u]) {
             t.over = true;
             setTimeout(function () { Pong.endGameMenu('Game Over!'); }, 1000);
         }
@@ -218,8 +221,12 @@ var Game = {
     // Draw the objects to the canvas element
     draw: function () {
         t = this;
+        c = t.t;
+        b = t.b;
+        l = t.l;
+        r = t.r;
         // Clear the Canvas
-        t.t.clearRect(
+        c.clearRect(
             0,
             0,
             W,
@@ -227,10 +234,10 @@ var Game = {
         );
 
         // Set the fill style to black
-        t.t.fillStyle = t.color;
+        c.fillStyle = t.color;
 
         // Draw the background
-        t.t.fillRect(
+        c.fillRect(
             0,
             0,
             W,
@@ -238,76 +245,76 @@ var Game = {
         );
 
         // Set the fill style to white (For the paddles and the ball)
-        t.t.fillStyle = '#ffffff';
+        c.fillStyle = '#ffffff';
 
         // Draw the Player
-        t.t.fillRect(
-            t.l.x,
-            t.l.y,
-            t.l.width,
-            t.l.height
+        c.fillRect(
+            l.x,
+            l.y,
+            l.w,
+            l.h
         );
 
         // Draw the Paddle
-        t.t.fillRect(
-            t.r.x,
-            t.r.y,
-            t.r.width,
-            t.r.height
+        c.fillRect(
+            r.x,
+            r.y,
+            r.w,
+            r.h
         );
 
         // Draw the Ball
         if (Pong._turnDelayIsOver.call(t)) {
-            t.t.fillRect(
-                t.b.x,
-                t.b.y,
-                t.b.width,
-                t.b.height
+            c.fillRect(
+                b.x,
+                b.y,
+                b.w,
+                b.h
             );
         }
 
         // Draw the net (Line in the middle)
-        t.t.beginPath();
-        t.t.setLineDash([7, 15]);
-        t.t.moveTo((W / 2), H - 140);
-        t.t.lineTo((W / 2), 140);
-        t.t.lineWidth = 10;
-        t.t.strokeStyle = '#ffffff';
-        t.t.stroke();
+        c.beginPath();
+        c.setLineDash([7, 15]);
+        c.moveTo((W / 2), H - 140);
+        c.lineTo((W / 2), 140);
+        c.lineWidth = 10;
+        c.strokeStyle = '#ffffff';
+        c.stroke();
 
         // Set the default canvas font and align it to the center
-        t.t.font = '100px Courier New';
-        t.t.textAlign = 'center';
+        c.font = '100px Courier New';
+        c.textAlign = 'center';
 
         // Draw the players score (left)
-        t.t.fillText(
-            t.l.score.toString(),
+        c.fillText(
+            l.score.toString(),
             (W / 2) - 300,
             200
         );
 
         // Draw the paddles score (right)
-        t.t.fillText(
-            t.r.score.toString(),
+        c.fillText(
+            r.score.toString(),
             (W / 2) + 300,
             200
         );
 
         // Change the font size for the center score text
-        t.t.font = '30px Courier New';
+        c.font = '30px Courier New';
 
         // Draw the winning score (center)
-        t.t.fillText(
+        c.fillText(
             'Round ' + (Pong.u + 1),
             (W / 2),
             35
         );
 
         // Change the font size for the center score value
-        t.t.font = '40px Courier';
+        c.font = '40px Courier';
 
         // Draw the current round number
-        t.t.fillText(
+        c.fillText(
             rounds[Pong.u] ? rounds[Pong.u] : rounds[Pong.u - 1],
             (W / 2),
             100
@@ -344,7 +351,7 @@ var Game = {
     // Reset the ball location, the player turns and set a delay before the next round begins.
     _resetTurn: function (victor, loser) {
         t = this;
-        t.b = Ball.new.call(t, t.b.speed);
+        t.b = Ball.new.call(t, t.b.s);
         t.turn = loser;
         t.timer = (new Date()).getTime();
 
