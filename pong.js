@@ -7,6 +7,8 @@ var DIRECTION = {
     RIGHT: 4
 };
 
+var W = 1400;
+var H = 1000;
 var canvas = document.createElement("canvas");
 document.body.appendChild(canvas);
 var rounds = [5, 5, 3, 3, 2];
@@ -18,8 +20,8 @@ var Ball = {
         return {
             width: 18,
             height: 18,
-            x: (this.v.width / 2) - 9,
-            y: (this.v.height / 2) - 9,
+            x: (W / 2) - 9,
+            y: (H / 2) - 9,
             moveX: DIRECTION.IDLE,
             moveY: DIRECTION.IDLE,
             speed: incrementedSpeed || 9
@@ -33,8 +35,8 @@ var Paddle = {
         return {
             width: 18,
             height: 70,
-            x: side === 'left' ? 150 : this.v.width - 150,
-            y: (this.v.height / 2) - 35,
+            x: side === 'left' ? 150 : W - 150,
+            y: (H / 2) - 35,
             score: 0,
             move: DIRECTION.IDLE,
             speed: 10
@@ -48,11 +50,11 @@ var Game = {
         t.v = document.querySelector('canvas');
         t.t = t.v.getContext('2d');
 
-        t.v.width = 1400;
-        t.v.height = 1000;
+        t.v.width = W;
+        t.v.height = H;
 
-        t.v.style.width = (t.v.width / 2) + 'px';
-        t.v.style.height = (t.v.height / 2) + 'px';
+        t.v.style.width = (W / 2) + 'px';
+        t.v.style.height = (H / 2) + 'px';
 
         t.l = Paddle.new.call(t, 'left');
         t.r = Paddle.new.call(t, 'right');
@@ -61,7 +63,7 @@ var Game = {
         t.r.speed = 8;
         t.running = t.over = false;
         t.turn = t.r;
-        t.timer = t.round = 0;
+        t.timer = t.u = 0;
         t.color = '#2c3e50';
 
         Pong.menu();
@@ -75,8 +77,8 @@ var Game = {
 
         // Draw the rectangle behind the 'Press any key to begin' text.
         Pong.t.fillRect(
-            Pong.v.width / 2 - 350,
-            Pong.v.height / 2 - 48,
+            W / 2 - 350,
+            H / 2 - 48,
             700,
             100
         );
@@ -86,8 +88,8 @@ var Game = {
 
         // Draw the end game menu text ('Game Over' and 'Winner')
         Pong.t.fillText(text,
-            Pong.v.width / 2,
-            Pong.v.height / 2 + 15
+            W / 2,
+            H / 2 + 15
         );
 
         setTimeout(function () {
@@ -107,8 +109,8 @@ var Game = {
 
         // Draw the rectangle behind the 'Press any key to begin' text.
         t.t.fillRect(
-            t.v.width / 2 - 350,
-            t.v.height / 2 - 48,
+            W / 2 - 350,
+            H / 2 - 48,
             700,
             100
         );
@@ -118,8 +120,8 @@ var Game = {
 
         // Draw the 'press any key to begin' text
         t.t.fillText('Press any key to begin',
-            t.v.width / 2,
-            t.v.height / 2 + 15
+            W / 2,
+            H / 2 + 15
         );
     },
 
@@ -130,9 +132,9 @@ var Game = {
 
             // If the ball collides with the bound limits - correct the x and y coords.
             if (t.b.x <= 0) Pong._resetTurn.call(t, t.r, t.l);
-            if (t.b.x >= t.v.width - t.b.width) Pong._resetTurn.call(t, t.l, t.r);
+            if (t.b.x >= W - t.b.width) Pong._resetTurn.call(t, t.l, t.r);
             if (t.b.y <= 0) t.b.moveY = DIRECTION.DOWN;
-            if (t.b.y >= t.v.height - t.b.height) t.b.moveY = DIRECTION.UP;
+            if (t.b.y >= H - t.b.height) t.b.moveY = DIRECTION.UP;
 
             // Move player if they player.move value was updated by a keyboard event
             if (t.l.move === DIRECTION.UP) t.l.y -= t.l.speed;
@@ -143,13 +145,13 @@ var Game = {
             if (Pong._turnDelayIsOver.call(t) && t.turn) {
                 t.b.moveX = t.turn === t.l ? DIRECTION.LEFT : DIRECTION.RIGHT;
                 t.b.moveY = [DIRECTION.UP, DIRECTION.DOWN][Math.round(Math.random())];
-                t.b.y = Math.floor(Math.random() * t.v.height - 200) + 200;
+                t.b.y = Math.floor(Math.random() * H - 200) + 200;
                 t.turn = null;
             }
 
             // If the player collides with the bound limits, update the x and y coords.
             if (t.l.y <= 0) t.l.y = 0;
-            else if (t.l.y >= (t.v.height - t.l.height)) t.l.y = (t.v.height - t.l.height);
+            else if (t.l.y >= (H - t.l.height)) t.l.y = (H - t.l.height);
 
             // Move ball in intended direction based on moveY and moveX values
             if (t.b.moveY === DIRECTION.UP) t.b.y -= (t.b.speed / 1.5);
@@ -168,7 +170,7 @@ var Game = {
             }
 
             // Handle paddle (AI) wall collision
-            if (t.r.y >= t.v.height - t.r.height) t.r.y = t.v.height - t.r.height;
+            if (t.r.y >= H - t.r.height) t.r.y = H - t.r.height;
             else if (t.r.y <= 0) t.r.y = 0;
 
             // Handle Player-Ball collisions
@@ -190,10 +192,10 @@ var Game = {
 
         // Handle the end of round transition
         // Check to see if the player won the round.
-        if (t.l.score === rounds[t.round]) {
+        if (t.l.score === rounds[t.u]) {
             // Check to see if there are any more rounds/levels left and display the victory screen if
             // there are not.
-            if (!rounds[t.round + 1]) {
+            if (!rounds[t.u + 1]) {
                 t.over = true;
                 setTimeout(function () { Pong.endGameMenu('Winner!'); }, 1000);
             } else {
@@ -203,11 +205,11 @@ var Game = {
                 t.l.speed += 0.5;
                 t.r.speed += 1;
                 t.b.speed += 1;
-                t.round += 1;
+                t.u += 1;
             }
         }
         // Check to see if the paddle/AI has won the round.
-        else if (t.r.score === rounds[t.round]) {
+        else if (t.r.score === rounds[t.u]) {
             t.over = true;
             setTimeout(function () { Pong.endGameMenu('Game Over!'); }, 1000);
         }
@@ -220,8 +222,8 @@ var Game = {
         t.t.clearRect(
             0,
             0,
-            t.v.width,
-            t.v.height
+            W,
+            H
         );
 
         // Set the fill style to black
@@ -231,8 +233,8 @@ var Game = {
         t.t.fillRect(
             0,
             0,
-            t.v.width,
-            t.v.height
+            W,
+            H
         );
 
         // Set the fill style to white (For the paddles and the ball)
@@ -267,8 +269,8 @@ var Game = {
         // Draw the net (Line in the middle)
         t.t.beginPath();
         t.t.setLineDash([7, 15]);
-        t.t.moveTo((t.v.width / 2), t.v.height - 140);
-        t.t.lineTo((t.v.width / 2), 140);
+        t.t.moveTo((W / 2), H - 140);
+        t.t.lineTo((W / 2), 140);
         t.t.lineWidth = 10;
         t.t.strokeStyle = '#ffffff';
         t.t.stroke();
@@ -280,14 +282,14 @@ var Game = {
         // Draw the players score (left)
         t.t.fillText(
             t.l.score.toString(),
-            (t.v.width / 2) - 300,
+            (W / 2) - 300,
             200
         );
 
         // Draw the paddles score (right)
         t.t.fillText(
             t.r.score.toString(),
-            (t.v.width / 2) + 300,
+            (W / 2) + 300,
             200
         );
 
@@ -296,8 +298,8 @@ var Game = {
 
         // Draw the winning score (center)
         t.t.fillText(
-            'Round ' + (Pong.round + 1),
-            (t.v.width / 2),
+            'Round ' + (Pong.u + 1),
+            (W / 2),
             35
         );
 
@@ -306,8 +308,8 @@ var Game = {
 
         // Draw the current round number
         t.t.fillText(
-            rounds[Pong.round] ? rounds[Pong.round] : rounds[Pong.round - 1],
-            (t.v.width / 2),
+            rounds[Pong.u] ? rounds[Pong.u] : rounds[Pong.u - 1],
+            (W / 2),
             100
         );
     },
