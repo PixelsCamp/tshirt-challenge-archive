@@ -10,7 +10,7 @@ my $pixel_width = 2;
 my $pixel_height = 1;
 
 my $frame_width = 39;
-my $frame_height = 40;
+# my $frame_height = 40;
 
 my $top_padding = 2;
 my $left_padding = 2;
