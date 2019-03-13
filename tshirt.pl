@@ -83,5 +83,5 @@ print $negative_str;
 print "\n" x 2;
 
 print "Code size: $code_filesize\n";
-print "Bytes needed: $bytes_needed\n";
+print "Chars needed: $bytes_needed\n";
 print "Delta: ",($code_filesize - $bytes_needed),"\n";

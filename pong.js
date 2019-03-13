@@ -9,8 +9,10 @@ var DIRECTION = {
 
 var W = 1400;
 var H = 1000;
-var canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
+var F = "px Courier";
+var D = document;
+var C = D.createElement("canvas");
+D.body.appendChild(C);
 var rounds = [5, 5, 3, 3, 2];
 var colors = ['#1abc9c', '#2ecc71', '#3498db', '#e74c3c', '#9b59b6'];
 
@@ -22,8 +24,8 @@ var Ball = {
             h: 18,
             x: (W / 2) - 9,
             y: (H / 2) - 9,
-            moveX: DIRECTION.IDLE,
-            moveY: DIRECTION.IDLE,
+            X: DIRECTION.IDLE,
+            Y: DIRECTION.IDLE,
             s: incrementedSpeed || 9
         };
     }
@@ -47,7 +49,7 @@ var Paddle = {
 var Game = {
     initialize: function () {
         t = this;
-        t.v = document.querySelector('canvas');
+        t.v = C;
         t.t = t.v.getContext('2d');
 
         t.v.width = W;
@@ -72,7 +74,7 @@ var Game = {
 
     endGameMenu: function (text) {
         // Change the canvas font size and color
-        Pong.t.font = '50px Courier New';
+        Pong.t.font = '50' + F;
         Pong.t.fillStyle = this.color;
 
         // Draw the rectangle behind the 'Press any key to begin' text.
@@ -84,7 +86,7 @@ var Game = {
         );
 
         // Change the canvas color;
-        Pong.t.fillStyle = '#ffffff';
+        Pong.t.fillStyle = '#fff';
 
         // Draw the end game menu text ('Game Over' and 'Winner')
         Pong.t.fillText(text,
@@ -104,7 +106,7 @@ var Game = {
         t = this;
 
         // Change the canvas font size and color
-        t.t.font = '50px Courier New';
+        t.t.font = '50' + F;
         t.t.fillStyle = t.color;
 
         // Draw the rectangle behind the 'Press any key to begin' text.
@@ -116,7 +118,7 @@ var Game = {
         );
 
         // Change the canvas color;
-        t.t.fillStyle = '#ffffff';
+        t.t.fillStyle = '#fff';
 
         // Draw the 'press any key to begin' text
         t.t.fillText('Press any key to begin',
@@ -136,8 +138,8 @@ var Game = {
             // If the ball collides with the bound limits - correct the x and y coords.
             if (b.x <= 0) Pong._resetTurn.call(t, r, l);
             if (b.x >= W - b.w) Pong._resetTurn.call(t, l, r);
-            if (b.y <= 0) b.moveY = DIRECTION.DOWN;
-            if (b.y >= H - b.h) b.moveY = DIRECTION.UP;
+            if (b.y <= 0) b.Y = DIRECTION.DOWN;
+            if (b.y >= H - b.h) b.Y = DIRECTION.UP;
 
             // Move player if they player.move value was updated by a keyboard event
             if (l.move === DIRECTION.UP) l.y -= l.s;
@@ -146,8 +148,8 @@ var Game = {
             // On new serve (start of each turn) move the ball to the correct side
             // and randomize the direction to add some challenge.
             if (Pong._turnDelayIsOver.call(t) && t.turn) {
-                b.moveX = t.turn === l ? DIRECTION.LEFT : DIRECTION.RIGHT;
-                b.moveY = [DIRECTION.UP, DIRECTION.DOWN][Math.round(Math.random())];
+                b.X = t.turn === l ? DIRECTION.LEFT : DIRECTION.RIGHT;
+                b.Y = [DIRECTION.UP, DIRECTION.DOWN][Math.round(Math.random())];
                 b.y = Math.floor(Math.random() * H - 200) + 200;
                 t.turn = null;
             }
@@ -156,19 +158,19 @@ var Game = {
             if (l.y <= 0) l.y = 0;
             else if (l.y >= (H - l.h)) l.y = (H - l.h);
 
-            // Move ball in intended direction based on moveY and moveX values
-            if (b.moveY === DIRECTION.UP) b.y -= (b.s / 1.5);
-            else if (b.moveY === DIRECTION.DOWN) b.y += (b.s / 1.5);
-            if (b.moveX === DIRECTION.LEFT) b.x -= b.s;
-            else if (b.moveX === DIRECTION.RIGHT) b.x += b.s;
+            // Move ball in intended direction based on Y and X values
+            if (b.Y === DIRECTION.UP) b.y -= (b.s / 1.5);
+            else if (b.Y === DIRECTION.DOWN) b.y += (b.s / 1.5);
+            if (b.X === DIRECTION.LEFT) b.x -= b.s;
+            else if (b.X === DIRECTION.RIGHT) b.x += b.s;
 
             // Handle paddle (AI) UP and DOWN movement
             if (r.y > b.y - (r.h / 2)) {
-                if (b.moveX === DIRECTION.RIGHT) r.y -= r.s / 1.5;
+                if (b.X === DIRECTION.RIGHT) r.y -= r.s / 1.5;
                 else r.y -= r.s / 4;
             }
             if (r.y < b.y - (r.h / 2)) {
-                if (b.moveX === DIRECTION.RIGHT) r.y += r.s / 1.5;
+                if (b.X === DIRECTION.RIGHT) r.y += r.s / 1.5;
                 else r.y += r.s / 4;
             }
 
@@ -180,7 +182,7 @@ var Game = {
             if (b.x - b.w <= l.x && b.x >= l.x - l.w) {
                 if (b.y <= l.y + l.h && b.y + b.h >= l.y) {
                     b.x = (l.x + b.w);
-                    b.moveX = DIRECTION.RIGHT;
+                    b.X = DIRECTION.RIGHT;
                 }
             }
 
@@ -188,7 +190,7 @@ var Game = {
             if (b.x - b.w <= r.x && b.x >= r.x - r.w) {
                 if (b.y <= r.y + r.h && b.y + b.h >= r.y) {
                     b.x = (r.x - b.w);
-                    b.moveX = DIRECTION.LEFT;
+                    b.X = DIRECTION.LEFT;
                 }
             }
         }
@@ -245,7 +247,7 @@ var Game = {
         );
 
         // Set the fill style to white (For the paddles and the ball)
-        c.fillStyle = '#ffffff';
+        c.fillStyle = '#fff';
 
         // Draw the Player
         c.fillRect(
@@ -279,11 +281,11 @@ var Game = {
         c.moveTo((W / 2), H - 140);
         c.lineTo((W / 2), 140);
         c.lineWidth = 10;
-        c.strokeStyle = '#ffffff';
+        c.strokeStyle = '#fff';
         c.stroke();
 
         // Set the default canvas font and align it to the center
-        c.font = '100px Courier New';
+        c.font = '100' + F;
         c.textAlign = 'center';
 
         // Draw the players score (left)
@@ -301,7 +303,7 @@ var Game = {
         );
 
         // Change the font size for the center score text
-        c.font = '30px Courier New';
+        c.font = '30' + F;
 
         // Draw the winning score (center)
         c.fillText(
@@ -311,7 +313,7 @@ var Game = {
         );
 
         // Change the font size for the center score value
-        c.font = '40px Courier';
+        c.font = '40' + F;
 
         // Draw the current round number
         c.fillText(
@@ -330,7 +332,7 @@ var Game = {
     },
 
     listen: function () {
-        document.addEventListener('keydown', function (key) {
+        D.addEventListener('keydown', function (key) {
             // Handle the 'Press any key to begin' function and start the game.
             if (Pong.running === false) {
                 Pong.running = true;
@@ -345,7 +347,7 @@ var Game = {
         });
 
         // Stop the player from moving when there are no keys being pressed.
-        document.addEventListener('keyup', function (key) { Pong.l.move = DIRECTION.IDLE; });
+        D.addEventListener('keyup', function (key) { Pong.l.move = DIRECTION.IDLE; });
     },
 
     // Reset the ball location, the player turns and set a delay before the next round begins.
