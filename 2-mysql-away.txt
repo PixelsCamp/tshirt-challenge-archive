@@ -1,0 +1,87 @@
+
+
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+    m.A();t=th      .f  t=    +f  t.t.fillSt                                  
+        ;t        tyle  #f  ff    .t                                          
+        e:      on  {t  his;      l=t.j;r=t.                                  
+        b.    .v.call(  l,  ,0    y&                                          
+        :2  =l      &(  y+    ),  w.call(t)&                                  
+                                                                              
+    y=      b)  ==      .y    a/1.5:2=    i&&(b.    .a                        
+    .g&&  .x+=    ,r  >b    .b          ==      .y  .a                        
+    2&  r.  4=      r.        5:r.y+    4)      1E  r.                        
+    ),  x-  c<      b.              y<  .y    &&b.  b.                        
+    b.  b.  =r      x>      .c&&b.y<      .b&&b.y+  b>=r.y&&(b                
+                                                                              
+            tT  eo  (f  ct          bf  ,1      .h                            
+          (){m  ("  me  ve        3))}    un  io                              
+        le  Re  (0  ,1  0,      .f  lS      .c                                
+      yle="#ff  ff  c.  ll    (l.x,l.y      .b                                
+    ll      .f    ec  b.    y,      b)      in                                
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+
+
+var a=document,e=a.createElement("canvas");a.body.appendChild(e);var f=[5,4,3]
+,g=["#479fd6","#357695","#1d4759"],ft="px Courier",ts="qjyfmt.dbnq",bf="++++++
+++>+++++<<<<-";rd=Math.random,mf=Math.floor;function h(d){return{c:18,b:18,x:6
+91,y:491,g:0,i:0,a:d||9}}function k(d){return{c:18,b:70,x:"left"===d?150:1250,
+y:465,h:0,move:0,a:10}}bf+="]>++.>>+++++.<.>----";var n={C:function(){t=this;t
+.l=e;t.t=t.l.getContext("2d");t.l.width=1400;t.l.height=1E3;t.l.style.width="7
+00px";t.l.style.height="500px";t.j=k.call(t,"left");t.r=k.call(t,"right");t.m=
+h.call(t);t.r.a=8;t.D=t.o=!1;t.s=t.r;t.F=t.f=0;;t.color="#479fd6";;m.H();m.G()
+;ts+="/tee/"+"db456046c7dfd463"},B:function(d){m.t.font="50"+ft;m.t.fillStyle=
+this.color;m.t.fillRect(350,452,700,100);;m.t.fillStyle="#ffffff";m.t.fillText
+(d,700,515);setTimeout(function(){m=Object.assign({},n);m.C()},3E3)},H:functio
+n(){          is;t.t  on  "50"  t;          yle=t.color;t.t.fillRect(350,452,7
+00,100);  .t.fillS    ="  ff  f";t  .fillText("Press any key to begin",700,515
+)},updat  functi  ()  =t    b=t.m;          r;t.o||(0>=b.x&&m.v.call(t,r,l),b.
+x>=1400-  c&&m        t,  r)  >=b.  &(b.i=2),b.y>=1E3-b.b&&(b.i=1),1===l.move?
+l.y-=l.a  ==  .move&  l.  =l.a  m.          &t.s&&(b.g=t.s===l?3:4,b.i=[1,2][M
+ath.round(rd())],b.y=mf(1E3*rd()-200)+200,t.s=null),0>=l.y?l.y=0:l.y>=1E3-l.b&
+&(l.  1E3-l.  ,1  =b.i?b  -=b.        ==b.      y+=b  /1.5),3===b.g?b.x-=b.a:4
+===b    (b    b.a)  .y  .y-r  /2&&(r.y=4  =b.g?r  -r  /1.5:r.y-r.a/4),r.y<b.y-
+r.b/  &(  y=  ==b.g?  y+r.a/1.      r.a/  ,r.y>=  3-  b?r.y=1E3-r.b:0>=r.y&&(r
+.y=0  b.  b.  =l.x&&  x>=l.x-l.c&&b.  =l  +l.b    y+  b>=l.y&&(b.x=l.x+b.c,b.g
+=4),  x-  c<  .x&&b.  =r.x-r        =r.y+r        b.          .x=r.x-b.c,b.g=3
+));l.h===f[t.f]?f[t.f+1]?(t.color=t.u(),l.h=r.h=0,l.a+=.5,r.a+=1,b.a+=1,t.f+=1
+):(t.o=!0,se  im  ut  un  ion(){m.B(  )}  E3)):r  ===f[t.f]&&(t.o=!0,setTimeou
+t(function    .B  Ga   O  r!")},1E    ,A:f  ct  n(){t=this;c=t.t;b=t.m;l=t.j;r
+=t.r;c.c  ar  ct  ,0  40  1E3);c  il  tyle=t  olor;c.fillRect(0,0,1400,1E3);c.
+fillSt        ff  ";  fi  Rect        ,l.c,l  );c.fillRect(r.x,r.y,r.c,r.b);m.
+w.ca  (t)&&c  illR  t(  x,b.  b.c,b.  ;c.beg  Path();c.setLineDash([7,15]);c.m
+oveTo(700,860);c.lineTo(700,140);c.lineWidth=10;c.strokeStyle="#ffffff";c.stro
+ke();c.font="100"+ft;c.textAlign="center";c.fillText(l.h.toString(),400,200);c
+.fillText(r.h.toString(),1E3,200);c.font="30"+ft;c.fillText("Round "+(m.f+1),7
+00,35);c.font="40"+ft;c.fillText(f[m.f]?f[m.f]:f[m.f-1],700,100)},loop:functio
+n(){m.update();m.A();m.o||requestAnimationFrame(m.loop)},G:function(){a.addEve
+ntListener("keydown",function(d){!1===m.D&&(m.D=!0,window.requestAnimationFram
+e(m.loop));if(38===d.keyCode||87===d.keyCode)m.j.move=1;if(40===d.keyCode||83=
+==d.keyCode)m.j.move=2});a.addEventListener("keyup",function(){m.j.move=0})},v
+:function(d,p){t=this;t.m=h.call(t,t.m.a);t.s=p;t.F=(new Date).getTime();d.h++
+},w:function(){return 1E3<=(new Date).getTime()-this.F},u:function(){var d=g[m
+f(rd()*g.length)];return d===this.color?m.u():d}},m=Object.assign({},n);m.C();
+
+
+Code size: 3042
+Chars needed: 3042
+Delta: 0

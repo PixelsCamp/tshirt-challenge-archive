@@ -25,11 +25,11 @@ colors
 5) #eca040 #c27f3c #885a2f
 ```
 
-./tshirt.pl --bitmap=mask-1-my-curl.dat --code=code-1.js
-./tshirt.pl --bitmap=mask-2-mysql-away.dat --code=code-2.js
-./tshirt.pl --bitmap=mask-3-shells-like.dat --code=code-3.js
-./tshirt.pl --bitmap=mask-4-sweet-dreams.dat --code=code-4.js
-./tshirt.pl --bitmap=mask-5-wake-npm.dat --code=code-5.js
+./tshirt.pl --bitmap=mask-1-my-curl.dat --code=code-1.js > 1-my-curl.txt
+./tshirt.pl --bitmap=mask-2-mysql-away.dat --code=code-2.js > 2-mysql-away.txt
+./tshirt.pl --bitmap=mask-3-shells-like.dat --code=code-3.js > 3-shells-like.txt
+./tshirt.pl --bitmap=mask-4-sweet-dreams.dat --code=code-4.js > 4-sweet-dreams.txt
+./tshirt.pl --bitmap=mask-5-wake-npm.dat --code=code-5.js > 5-wake-npm.txt
 
 
 ++++++++++[>+++++++++++>++++++++++++>++++++++++>+++++<<<<-]>++.>>+++++.<.>----.<<----.>-----.>>----.<--.--.<<+.+++.>>>+.<<+.>++++..>.<---.<<++.>>>+++++.---.<<<----.>>++++.<+.>---.<<---.>>>++.<+.

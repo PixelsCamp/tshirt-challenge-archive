@@ -1,0 +1,87 @@
+
+
+                                                                              
+                                                                              
+    ++  .<  >"          an  m,    at  floor;func                              
+    :4  ,g  ,i        9}}f  ct  n     {r                                      
+    5,  0,  ve      0}  f+  ---.      >>>++.<+."                              
+    ;t  =t  .g    ntext("2  );  l.    h=                                      
+      t.  st    he      50  x"    =k  all(t,"lef                              
+                                                                              
+    ="      +"  c9238647f5      ,B      io  d){m.t.f                          
+    .col  ;m.t  il              70      ;;  t.      yl                        
+    00  15  se  imeout(fun      ){      ct  ss      ,n                        
+    m.  );  th  ;t              t;      ll  yle=t.co                          
+    00  ;t  .f  lStyle="#f        .t.fil    t(                                
+                                                                              
+    40  b.  &m  .c      l,  ,0>=b.y&&(  i=      >=                            
+    =l  :2  =l  ov      y+  .a          (t)&    &&                            
+    ro  d(  ()  ,b.y=mf(1E  rd()-200)+  0,  s=  ll                            
+    y=  3-  b)  ==      .y  b.          b.    b.y+                            
+      &&  .x    a)      .y  .b/2&&(r.y  ==      .y                            
+                                                                              
+    ),      c<  .x&&b.x>    -l      y<                                        
+    b.x-    =r  &&      .x  .c&&  y<=r                                        
+    .h  =f  .f  f[      ?(  co  r=  u(                                        
+    .o    setT  eout(fun    n(  m.  bf                                        
+    nc      {m  ("          ")  1E  )}                                        
+                                                                              
+    St  e=      ff    fillRect  .x,l.y,l.c      c.  ll          .y            
+    ll  )&&c    lR  t(              b)        Path  ;c          sh            
+    o(  0,  0)  .l    o(700,        in      =1  c.  ro          ff            
+    ;c  on    00"+          li      nt    c.fillTe  (l          g(            
+    lT  t(      St  ng(),1E3        fo  ="      ;c  illText("R  nd "+(m.f+    
+                                                                              
+    m.update()  .A      ||  questAni      Frame(m.                            
+    st          own"    ct  n(      ==  D&                                    
+    loop));if(  ==  .k  Co  ||      .k    de)m.j                              
+    ke          mo    });a  dd      is          up                            
+    ction(d,p)  =t      m=  call(t,t    );t.s=p;                              
+                                                                              
+                                                                              
+
+
+var a=document,e=a.createElement("canvas");a.body.appendChild(e);var f=[5,4,3]
+,g=["#eca040","#c27f3c","#885a2f"],ft="px Courier",ts="qjyfmt.dbnq",bf="<<<---
+-.>>  ++  +.  ;rd=Math.r  do  mf=M  h.          tion h(d){return{c:18,b:18,x:6
+91,y  91  :0  :0,a:d||    un  io  k(d)  eturn{c:18,b:70,x:"left"===d?150:1250,
+y:46  h:  mo  :0,a:1  }b  ="    <<---.          ;;var n={C:function(){t=this;t
+.l=e  .t  .l  etCo        d"  t.  widt  1400;t.l.height=1E3;t.l.style.width="7
+00px";  l.  yle.  ight="  0p  ;t.j  .c          t");t.r=k.call(t,"right");t.m=
+h.call(t);t.r.a=8;t.D=t.o=!1;t.s=t.r;t.F=t.f=0;;t.color="#eca040";;m.H();m.G()
+;ts+  /tee/"  35          302f"}  :funct  n(        ont="50"+ft;m.t.fillStyle=
+this    or    .f  lRect(350,452,  0,100)  m.  fillSt  e="#ffffff";m.t.fillText
+(d,7  ,5  );  tT          ction(  m=Obje  .a  ign({}  );m.C()},3E3)},H:functio
+n(){  A(  t=  is  .t.font="50"+f  t.t.fi  St        lor;t.t.fillRect(350,452,7
+00,1  );  .t  il          fffff";t      lTex  "Press any key to begin",700,515
+)},update:function(){t=this;b=t.m;l=t.j;r=t.r;t.o||(0>=b.x&&m.v.call(t,r,l),b.
+x>=1  0-  c&  .v  all(t,  r)          b.  2),b.y  1E3-b.b&&(b.i=1),1===l.move?
+l.y-  .a  ==  .m  e&&(l.  =l  ),m.w.call    &t.s  (b.g=t.s===l?3:4,b.i=[1,2][M
+ath.  un  rd  )]          3*          20  t.  nu  ),0>=l.y?l.y=0:l.y>=1E3-l.b&
+&(l.  1E  l.  ,1  =b.i?b  -=  a/1.5:2===  i&&(    =b.a/1.5),3===b.g?b.x-=b.a:4
+===b.g  (b  +=b.  ,r.y>b  -r          =4  =b.g?r  -r.a/1.5:r.y-r.a/4),r.y<b.y-
+r.b/2&&(r.y=4===b.g?r.y+r.a/1.5:r.y+r.a/4),r.y>=1E3-r.b?r.y=1E3-r.b:0>=r.y&&(r
+.y=0  b.x-b.  =l        =l.x  .c&&b.  =l.y+l.b&&b.y+b.b>=l.y&&(b.x=l.x+b.c,b.g
+=4),    b.c<  .x  b.x>=r  -r    b.    .y+r.b&&b.y+b.b>=r.y&&(b.x=r.x-b.c,b.g=3
+));l  ==  [t  ]?  t.f+1]  t.  lo  t.  ),l.h=r.h=0,l.a+=.5,r.a+=1,b.a+=1,t.f+=1
+):(t  =!0,    im        ctio  ){  B(  )},1E3)):r.h===f[t.f]&&(t.o=!0,setTimeou
+t(fu  tion()  .B  Game Over!  },  3)  ,A:function(){t=this;c=t.t;b=t.m;l=t.j;r
+=t.r;c.clearRect(0,0,1400,1E3);c.fillStyle=t.color;c.fillRect(0,0,1400,1E3);c.
+fill  yl  "#ffff  ";c.        (l          ,l.b);  fi  Rect(r.x,r  ,r.c,r.b);m.
+w.ca  (t    .fil  ec  b.x,b.y,b.c,b.  ;c.begin    ()  .setLineDa  ([7,15]);c.m
+oveT  70  86  ;c  ineT      140);c.l  eWidth  0;  st  keStyle="#  ffff";c.stro
+ke()  .f  t="1    ft;c.textA  gn="ce  er";        xt  .h.toStrin  ),400,200);c
+.fil  ex  r.h.to  ri        ,200);c.  nt  30"+ft  .f          ou          1),7
+00,35);c.font="40"+ft;c.fillText(f[m.f]?f[m.f]:f[m.f-1],700,100)},loop:functio
+n(){          ;m  ();m.o  re        mation        loop)},G:function(){a.addEve
+ntLi  ener("keyd    ,fun  io  d){!1=  m.  &(m.D=!0,window.requestAnimationFram
+e(m.          38  =d  ey  de  87===d  eyCo      .move=1;if(40===d.keyCode||83=
+==d.  yCode)m.j.  ve=2    .a  EventL  tener("key  ",function(){m.j.move=0})},v
+:fun          {t  his;t.  h.        .m.a        t.F=(new Date).getTime();d.h++
+},w:function(){return 1E3<=(new Date).getTime()-this.F},u:function(){var d=g[m
+f(rd()*g.length)];return d===this.color?m.u():d}},m=Object.assign({},n);m.C();
+
+
+Code size: 3042
+Chars needed: 3042
+Delta: 0

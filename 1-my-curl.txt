@@ -1,0 +1,87 @@
+
+
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+            .g  Context(    );t.l.widt                                        
+          styl  he      50  x"                                                
+        );  r.  8;      o=  ;t.s=t.r;t                                        
+      /tee/"+"  3c9d4d9e    92                                                
+    .c      .t  il      35  452,700,10                                        
+                                                                              
+    m.      th    .t.fon    0"      t.                                        
+      );  .t    lS      #f  ff      .f                                        
+        e:      on      hi  b=      t.                                        
+        b.      .c      l,  ,0      &(                                        
+        :2        e&&(l.      ),m.w.                                          
+                                                                              
+      1E3-l.      =b.i?b    b.      2=  b.      y+          3=                
+    .g          a)      .y  .b/2    .y  ===b    .y        :r.y                
+    2&    y=4=  b.      r.  1.  r.  r.  4)  .y  1E      r.  1E                
+    ),      c<  .x      =l  -l    b.y<  .y    &&b.    b>=l.y&&                
+      x-b.c<=r    b.x>=r    .c      =r  +r      y+  b>      (b                
+                                                                              
+    .o=!0,se    eout(funct      m.      ,1  ))      =f                        
+    nc      {m  ("              1E3)  ,A:f    io  ){                          
+    ;c.clear    (0,0,1400,      .f  lS  le      or                            
+    St      ff  ff              .x  .y  .c      c.                            
+    ll(t)&&c    lRect(b.x,      c,  b)  .b      th                            
+                                                                              
+      .font="1  "+      ex  lign="ce    ";                                    
+    lT          St      ,1  ,2      fo  ="                                    
+    5)          0"      fi  Te      .f  f[                                    
+    m.          .A      ||  questAni    on                                    
+      ener("ke    n",fun    n(      ==  D&&(m.D=!0                            
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+
+
+var a=document,e=a.createElement("canvas");a.body.appendChild(e);var f=[5,4,3]
+,g=["#65b357","#4c8649","#2e4e2a"],ft="px Courier",ts="qjyfmt.dbnq",bf="++++++
+++++[>+++++++";rd=Math.random,mf=Math.floor;function h(d){return{c:18,b:18,x:6
+91,y:491,g:0,i:0,a:d||9}}function k(d){return{c:18,b:70,x:"left"===d?150:1250,
+y:465,h:0,move:0,a:10}}bf+="++++>++++++++++++>++";var n={C:function(){t=this;t
+.l=e;t.t=t.l  et        "2d"          h=1400;t.l.height=1E3;t.l.style.width="7
+00px";t.l.    e.  ight="  0p  ;t.j=k.call(t,"left");t.r=k.call(t,"right");t.m=
+h.call(t  t.  a=  t.D=t.  !1          .F=t.f=0;;t.color="#65b357";;m.H();m.G()
+;ts+="        49        55f7  "},B:function(d){m.t.font="50"+ft;m.t.fillStyle=
+this  olor;m  .f  lRect(  0,          0);;m.t.fillStyle="#ffffff";m.t.fillText
+(d,700,515);setTimeout(function(){m=Object.assign({},n);m.C()},3E3)},H:functio
+n(){  A();t=  is;t      t="5  +ft;t.  fillStyle=t.color;t.t.fillRect(350,452,7
+00,100  ;t  .fil  tyle="  ff  f";t.t  illText("Press any key to begin",700,515
+)},updat  functi  (){t=t  s;  t.m;l=  j;r=t.r;t.o||(0>=b.x&&m.v.call(t,r,l),b.
+x>=1400-  c&&m.v  all(t,  r)  >=b.y&  b.i=2),b.y>=1E3-b.b&&(b.i=1),1===l.move?
+l.y-=l.a  ===l.mov      y+=l.a      call(t)&&t.s&&(b.g=t.s===l?3:4,b.i=[1,2][M
+ath.round(rd())],b.y=mf(1E3*rd()-200)+200,t.s=null),0>=l.y?l.y=0:l.y>=1E3-l.b&
+&(l.y=      b),1==      .y-=  a/1.5:  ==  i&&(b.  =b.a/1.5),  ==b.g?b.x-=b.a:4
+===b  &&(b.x+=b.  ,r.y>b  -r    &&(r  =4    .g?r  -r.a/1.5    -r.a/4),r.y<b.y-
+r.b/  &(r.    ==  g?r.y+  a/  5:  y+  a/  ,r  >=  3-r.b?  y=  3-r.b:0>=r.y&&(r
+.y=0  b.x-b.  =l  &&b.x>  .x  .c&&    =l  +l.b    y+b.        (b.x=l.x+b.c,b.g
+=4),b.        .x&&      .x-r  &&b.y<  .y  .b&&b.  b.  =r.y&&  .x=r.x-b.c,b.g=3
+));l.h===f[t.f]?f[t.f+1]?(t.color=t.u(),l.h=r.h=0,l.a+=.5,r.a+=1,b.a+=1,t.f+=1
+):(t        tTim          ion(){  B(bf)}  E3  :r.h==  [t.f]&&(t.o=!0,setTimeou
+t(fu  tion()  .B  Game Over!")},    )}    unct  n(  t=this;c=t.t;b=t.m;l=t.j;r
+=t.r        Rect          1E3);c  il  ty  =t.col  ;c.fillRect(0,0,1400,1E3);c.
+fill  yle="#  ff  ";c.fillRect(l  ,l  ,l  ,l.b);  fillRect(r.x,r.y,r.c,r.b);m.
+w.ca        .fil          b.y,b.  b.  ;c  eginPa  ();c.setLineDash([7,15]);c.m
+oveTo(700,860);c.lineTo(700,140);c.lineWidth=10;c.strokeStyle="#ffffff";c.stro
+ke();c        00  ft;c.t  tA        nter  c.fillText(l.h.toString(),400,200);c
+.fil  ext(r.h.to  ring()  E3  00);c.  nt  30"+ft;c.fillText("Round "+(m.f+1),7
+00,3  ;c.font="4  +ft;c.  ll  xt(f[m  ]?  m.f]:f[m.f-1],700,100)},loop:functio
+n(){  update();m  ();m.o  re        mati  Frame(m.loop)},G:function(){a.addEve
+ntList        ydow      ctio  d){!1=  m.          ,window.requestAnimationFram
+e(m.loop));if(38===d.keyCode||87===d.keyCode)m.j.move=1;if(40===d.keyCode||83=
+==d.keyCode)m.j.move=2});a.addEventListener("keyup",function(){m.j.move=0})},v
+:function(d,p){t=this;t.m=h.call(t,t.m.a);t.s=p;t.F=(new Date).getTime();d.h++
+},w:function(){return 1E3<=(new Date).getTime()-this.F},u:function(){var d=g[m
+f(rd()*g.length)];return d===this.color?m.u():d}},m=Object.assign({},n);m.C();
+
+
+Code size: 3042
+Chars needed: 3042
+Delta: 0
