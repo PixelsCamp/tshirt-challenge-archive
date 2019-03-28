@@ -65,6 +65,8 @@ $ ./tools/convert.js screens/screenshot.scr > screens/screenshot.bas
 
 Install, run it, and open the [pixels.tzx][10] to run this program.
 
+Alternatively, you can use this ZX Spectrum emulator [in Javascript][18] and open [this URL][17] using the **load from web** feature.
+
 ## Credits
 
 [Isa][16] did all the SCR graphics.
@@ -93,3 +95,5 @@ Install, run it, and open the [pixels.tzx][10] to run this program.
 [14]: https://www.vim.org/
 [15]: https://www.worldofspectrum.org/TZXformat.html
 [16]: https://github.com/isacosta
+[17]: https://raw.githubusercontent.com/PixelsCamp/tshirt-gate/master/2019/zxspectrum/releases/pixels.tzx
+[18]: https://jsspeccy.zxdemo.org/
