@@ -53,7 +53,7 @@ brew cask install java
 
 ## Tools
 
-I've coded this tiny NodeJS [tool][7] that converts a [.SCR][5] file from [Colorator][6] into an includable [screen.bas][screens/rocket.bas] buffer, which can then be loaded directly to screen using this [assembly code][lib/putchars.bas].
+I've coded this tiny NodeJS [tool][7] that converts a [.SCR][5] file from [Colorator][6] into an includable [screen.bas][2019/zxspectrum/screens/rocket.bas] buffer, which can then be loaded directly to screen using this [assembly code][2019/zxspectrum/lib/putchars.bas].
 
 To use:
 
