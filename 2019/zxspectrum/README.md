@@ -3,7 +3,7 @@ ZX Pixels
 
 ZX Spectrum 48K program, as part of the Pixels Camp v3.0 t-shirt [challenge][0].
 
-
+![Demo](screens/game.gif)
 
 ## Instalation
 
