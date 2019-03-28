@@ -5,6 +5,8 @@ ZX Spectrum 48K program, as part of the Pixels Camp v3.0 t-shirt [challenge][0].
 
 ![Demo](screens/game.gif)
 
+This program was written using [ZXBasic][1], a Sinclair ZX Spectrum BASIC compiler for modern systems where you can use both an improved BASIC laguage and inline Z80 assembly where it makes sense. The resulting binary is then compiled, optimized and packed into a ready to use [TZX][15] file.
+
 ## Instalation
 
 First install the [ZXBasic][1] toolkit as a subdirectory of this repo (don't worry, it's .gitignored):
