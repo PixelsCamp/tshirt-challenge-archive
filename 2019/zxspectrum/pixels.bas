@@ -1,8 +1,6 @@
 #include "./lib/putchars.bas"
-REM #include "paint.bas"
 #include "./lib/paintdata.bas"
 #include "./lib/sounds.bas"
-REM #include <screen.bas>
 #include <keys.bas>
 
 #define input_y 22
