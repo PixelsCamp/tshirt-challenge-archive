@@ -83,11 +83,11 @@ Install, run it, and open the [pixels.tzx][10] to run this program.
 [4]: https://github.com/cpcsdk/vim-z80-democoding
 [5]: http://www.zx-modules.de/fileformats/scrformat.html
 [6]: https://github.com/yomboprime/colorator
-[7]: https://github.com/PixelsCamp/tshirt-gate/2019/zxspectrum/blob/master/tools/convert.js
+[7]: https://github.com/PixelsCamp/tshirt-gate/blob/master/2019/zxspectrum/tools/convert.js
 [8]: http://fuse-emulator.sourceforge.net/
 [9]: https://fuse-for-macosx.sourceforge.io/
-[10]: https://github.com/PixelsCamp/tshirt-gate/2019/zxspectrum/raw/master/releases/pixels.tzx
-[11]: https://github.com/PixelsCamp/tshirt-gate/2019/zxspectrum/blob/master/Makefile
+[10]: https://github.com/PixelsCamp/tshirt-gate/raw/master/2019/zxspectrum/releases/pixels.tzx
+[11]: https://github.com/PixelsCamp/tshirt-gate/blob/master/2019/zxspectrum/Makefile
 [12]: http://www.overtakenbyevents.com/lets-talk-about-the-zx-specrum-screen-layout/
 [13]: http://www.overtakenbyevents.com/lets-talk-about-the-zx-specrum-screen-layout-part-two/
 [14]: https://www.vim.org/
