@@ -53,7 +53,7 @@ brew cask install java
 
 ## Tools
 
-I've coded this tiny NodeJS [tool][7] that converts a [.SCR][5] file from [Colorator][6] into an includable [screen.bas][2019/zxspectrum/screens/rocket.bas] buffer, which can then be loaded directly to screen using this [assembly code][2019/zxspectrum/lib/putchars.bas].
+I've coded this tiny NodeJS [tool][7] that converts a [.SCR][5] file from [Colorator][6] into an includable [screen.bas][19] buffer, which can then be loaded directly to screen using this [assembly code][20].
 
 To use:
 
@@ -99,3 +99,6 @@ Alternatively, you can use this ZX Spectrum emulator [in Javascript][18] and ope
 [16]: https://github.com/isacosta
 [17]: https://raw.githubusercontent.com/PixelsCamp/tshirt-gate/master/2019/zxspectrum/releases/pixels.tzx
 [18]: https://jsspeccy.zxdemo.org/
+[19]: https://github.com/PixelsCamp/tshirt-gate/blob/master/2019/zxspectrum/screens/screenshot.bas
+[20]: https://github.com/PixelsCamp/tshirt-gate/blob/master/2019/zxspectrum/lib/putchars.bas
+
