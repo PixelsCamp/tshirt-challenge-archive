@@ -65,6 +65,10 @@ $ ./tools/convert.js screens/screenshot.scr > screens/screenshot.bas
 
 Install, run it, and open the [pixels.tzx][10] to run this program.
 
+## Credits
+
+[Isa][16] did all the SCR graphics.
+
 ## Useful docs
 
 * [SCR file specfications][5]
@@ -88,3 +92,4 @@ Install, run it, and open the [pixels.tzx][10] to run this program.
 [13]: http://www.overtakenbyevents.com/lets-talk-about-the-zx-specrum-screen-layout-part-two/
 [14]: https://www.vim.org/
 [15]: https://www.worldofspectrum.org/TZXformat.html
+[16]: https://github.com/isacosta
